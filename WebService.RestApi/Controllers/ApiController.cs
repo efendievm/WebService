@@ -16,11 +16,11 @@ namespace WebService.RestApi.Controllers
         private readonly ILogger<ApiController> _logger;
 
         /// <summary>
-        /// Конструктор.
+        /// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ.
         /// </summary>
-        /// <param name="queryProvider">Провайдер запросов.</param>
-        /// <param name="mapper">Маппер.</param>
-        /// <param name="logger">Логгер.</param>
+        /// <param name="queryProvider">РџСЂРѕРІР°Р№РґРµСЂ Р·Р°РїСЂРѕСЃРѕРІ.</param>
+        /// <param name="mapper">РњР°РїРїРµСЂ.</param>
+        /// <param name="logger">Р›РѕРіРіРµСЂ.</param>
         public ApiController(
             Contracts.IQueryProvider queryProvider,
             IMapper mapper,
@@ -32,10 +32,10 @@ namespace WebService.RestApi.Controllers
         }
 
         /// <summary>
-        /// Создание точки измерения.
+        /// РЎРѕР·РґР°РЅРёРµ С‚РѕС‡РєРё РёР·РјРµСЂРµРЅРёСЏ.
         /// </summary>
-        /// <param name="measurementPointCreateDto">ДТО для создания точки измерения.</param>
-        /// <returns>ДТО для чтения данных по точке измерения.</returns>
+        /// <param name="measurementPointCreateDto">Р”РўРћ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ С‚РѕС‡РєРё РёР·РјРµСЂРµРЅРёСЏ.</param>
+        /// <returns>Р”РўРћ РґР»СЏ С‡С‚РµРЅРёСЏ РґР°РЅРЅС‹С… РїРѕ С‚РѕС‡РєРµ РёР·РјРµСЂРµРЅРёСЏ.</returns>
         [HttpPost(Name = "PostMeasurementPoint")]
         public async Task<ActionResult<MeasurementPointReadDto>> PostMeasurementPoint(MeasurementPointCreateDto measurementPointCreateDto)
         {
@@ -53,10 +53,10 @@ namespace WebService.RestApi.Controllers
         }
 
         /// <summary>
-        /// Создание точки измерения.
+        /// РЎРѕР·РґР°РЅРёРµ С‚РѕС‡РєРё РёР·РјРµСЂРµРЅРёСЏ.
         /// </summary>
-        /// <param name="meterCreateDto">ДТО для создания счётчика электроэнергии.</param>
-        /// <returns>ДТО для чтения данных по счётчику электроэнергии.</returns>
+        /// <param name="meterCreateDto">Р”РўРћ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ СЃС‡С‘С‚С‡РёРєР° СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё.</param>
+        /// <returns>Р”РўРћ РґР»СЏ С‡С‚РµРЅРёСЏ РґР°РЅРЅС‹С… РїРѕ СЃС‡С‘С‚С‡РёРєСѓ СЌР»РµРєС‚СЂРѕСЌРЅРµСЂРіРёРё.</returns>
         [HttpPost(Name = "PostMeter")]
         public async Task<ActionResult<MeterReadRichDto>> PostMeter(MeterCreateDto meterCreateDto)
         {
@@ -73,10 +73,10 @@ namespace WebService.RestApi.Controllers
         }
 
         /// <summary>
-        /// Создание трансформатора тока.
+        /// РЎРѕР·РґР°РЅРёРµ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° С‚РѕРєР°.
         /// </summary>
-        /// <param name="meterCreateDto">ДТО для создания трансформатора тока.</param>
-        /// <returns>ДТО для чтения данных по трансформатору тока.</returns>
+        /// <param name="meterCreateDto">Р”РўРћ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° С‚РѕРєР°.</param>
+        /// <returns>Р”РўРћ РґР»СЏ С‡С‚РµРЅРёСЏ РґР°РЅРЅС‹С… РїРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂСѓ С‚РѕРєР°.</returns>
         [HttpPost(Name = "PostCurrentTransformer")]
         public async Task<ActionResult<CurrentTransformerReadRichDto>> PostCurrentTransformer(CurrentTransformerCreateDto currentTransformerCreateDto)
         {
@@ -93,10 +93,10 @@ namespace WebService.RestApi.Controllers
         }
 
         /// <summary>
-        /// Создание трансформатора тока.
+        /// РЎРѕР·РґР°РЅРёРµ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° С‚РѕРєР°.
         /// </summary>
-        /// <param name="meterCreateDto">ДТО для создания трансформатора напряжения.</param>
-        /// <returns>ДТО для чтения данных по трансформатору напряжения.</returns>
+        /// <param name="meterCreateDto">Р”РўРћ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР° РЅР°РїСЂСЏР¶РµРЅРёСЏ.</param>
+        /// <returns>Р”РўРћ РґР»СЏ С‡С‚РµРЅРёСЏ РґР°РЅРЅС‹С… РїРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂСѓ РЅР°РїСЂСЏР¶РµРЅРёСЏ.</returns>
         [HttpPost(Name = "PostVoltageTransformer")]
         public async Task<ActionResult<VoltageTransformerReadRichDto>> PostVoltageTransformer(VoltageTransformerCreateDto voltageTransformerCreateDto)
         {
@@ -113,10 +113,10 @@ namespace WebService.RestApi.Controllers
         }
 
         /// <summary>
-        /// Получение расчетных приборов учета.
+        /// РџРѕР»СѓС‡РµРЅРёРµ СЂР°СЃС‡РµС‚РЅС‹С… РїСЂРёР±РѕСЂРѕРІ СѓС‡РµС‚Р°.
         /// </summary>
-        /// <param name="year">Период учёта.</param>
-        /// <returns>Коллекция данных по приборам учета.</returns>
+        /// <param name="year">РџРµСЂРёРѕРґ СѓС‡С‘С‚Р°.</param>
+        /// <returns>РљРѕР»Р»РµРєС†РёСЏ РґР°РЅРЅС‹С… РїРѕ РїСЂРёР±РѕСЂР°Рј СѓС‡РµС‚Р°.</returns>
         [HttpGet(Name = "GetCalculationMeters")]
         public async Task<ActionResult<IEnumerable<CalculationMeterReadDto>>> GetCalculationMeters(int year)
         {
@@ -126,10 +126,10 @@ namespace WebService.RestApi.Controllers
         }
 
         /// <summary>
-        /// Получение счетчиков с закончившимся сроком поверки.
+        /// РџРѕР»СѓС‡РµРЅРёРµ СЃС‡РµС‚С‡РёРєРѕРІ СЃ Р·Р°РєРѕРЅС‡РёРІС€РёРјСЃСЏ СЃСЂРѕРєРѕРј РїРѕРІРµСЂРєРё.
         /// </summary>
-        /// <param name="consumptionObjectId">Id объекта потребления.</param>
-        /// <returns>Коллекция данных по счётчикам.</returns>
+        /// <param name="consumptionObjectId">Id РѕР±СЉРµРєС‚Р° РїРѕС‚СЂРµР±Р»РµРЅРёСЏ.</param>
+        /// <returns>РљРѕР»Р»РµРєС†РёСЏ РґР°РЅРЅС‹С… РїРѕ СЃС‡С‘С‚С‡РёРєР°Рј.</returns>
         [HttpGet(Name = "GetExpiredMeters")]
         public async Task<ActionResult<IEnumerable<MeterReadRichDto>>> GetExpiredMeters(int consumptionObjectId)
         {
@@ -139,10 +139,10 @@ namespace WebService.RestApi.Controllers
         }
 
         /// <summary>
-        /// Получение трансформаторов тока с закончившимся сроком поверки.
+        /// РџРѕР»СѓС‡РµРЅРёРµ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ С‚РѕРєР° СЃ Р·Р°РєРѕРЅС‡РёРІС€РёРјСЃСЏ СЃСЂРѕРєРѕРј РїРѕРІРµСЂРєРё.
         /// </summary>
-        /// <param name="consumptionObjectId">Id объекта потребления.</param>
-        /// <returns>Коллекция данных по тока напряжения.</returns>
+        /// <param name="consumptionObjectId">Id РѕР±СЉРµРєС‚Р° РїРѕС‚СЂРµР±Р»РµРЅРёСЏ.</param>
+        /// <returns>РљРѕР»Р»РµРєС†РёСЏ РґР°РЅРЅС‹С… РїРѕ С‚РѕРєР° РЅР°РїСЂСЏР¶РµРЅРёСЏ.</returns>
         [HttpGet(Name = "GetExpiredCurrentTransformers")]
         public async Task<ActionResult<IEnumerable<CurrentTransformerReadRichDto>>> GetExpiredCurrentTransformers(int consumptionObjectId)
         {
@@ -152,10 +152,10 @@ namespace WebService.RestApi.Controllers
         }
 
         /// <summary>
-        /// Получение трансформаторов напряжения с закончившимся сроком поверки.
+        /// РџРѕР»СѓС‡РµРЅРёРµ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂРѕРІ РЅР°РїСЂСЏР¶РµРЅРёСЏ СЃ Р·Р°РєРѕРЅС‡РёРІС€РёРјСЃСЏ СЃСЂРѕРєРѕРј РїРѕРІРµСЂРєРё.
         /// </summary>
-        /// <param name="consumptionObjectId">Id объекта потребления.</param>
-        /// <returns>Коллекция данных по трансформаторам напряжения.</returns>
+        /// <param name="consumptionObjectId">Id РѕР±СЉРµРєС‚Р° РїРѕС‚СЂРµР±Р»РµРЅРёСЏ.</param>
+        /// <returns>РљРѕР»Р»РµРєС†РёСЏ РґР°РЅРЅС‹С… РїРѕ С‚СЂР°РЅСЃС„РѕСЂРјР°С‚РѕСЂР°Рј РЅР°РїСЂСЏР¶РµРЅРёСЏ.</returns>
         [HttpGet(Name = "GetExpiredVoltageTransformers")]
         public async Task<ActionResult<IEnumerable<VoltageTransformerReadRichDto>>> GetExpiredVoltageTransformers(int consumptionObjectId)
         {

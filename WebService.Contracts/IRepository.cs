@@ -3,23 +3,23 @@ using WebService.Domain;
 namespace WebService.Contracts;
 
 /// <summary>
-/// Репозиторий.
+/// Р РµРїРѕР·РёС‚РѕСЂРёР№.
 /// </summary>
-/// <typeparam name="TModel">Тип сущности.</typeparam>
+/// <typeparam name="TModel">РўРёРї СЃСѓС‰РЅРѕСЃС‚Рё.</typeparam>
 public interface IRepository<TModel>
     where TModel : BaseEntity
 {
     /// <summary>
-    /// Чтение сущностей.
+    /// Р§С‚РµРЅРёРµ СЃСѓС‰РЅРѕСЃС‚РµР№.
     /// </summary>
-    /// <returns>Запрос на чтение сущностей.</returns>
+    /// <returns>Р—Р°РїСЂРѕСЃ РЅР° С‡С‚РµРЅРёРµ СЃСѓС‰РЅРѕСЃС‚РµР№.</returns>
     IQueryable<TModel> Get();
 
     /// <summary>
-    /// Добавление сущности.
+    /// Р”РѕР±Р°РІР»РµРЅРёРµ СЃСѓС‰РЅРѕСЃС‚Рё.
     /// </summary>
-    /// <param name="model">Добавляемая сущность.</param>
-    /// <param name="token">Токен отмены.</param>
-    /// <returns>Задача на добавление мущности в БД.</returns>
+    /// <param name="model">Р”РѕР±Р°РІР»СЏРµРјР°СЏ СЃСѓС‰РЅРѕСЃС‚СЊ.</param>
+    /// <param name="token">РўРѕРєРµРЅ РѕС‚РјРµРЅС‹.</param>
+    /// <returns>Р—Р°РґР°С‡Р° РЅР° РґРѕР±Р°РІР»РµРЅРёРµ РјСѓС‰РЅРѕСЃС‚Рё РІ Р‘Р”.</returns>
     Task Add(TModel model, CancellationToken token = default);
 }

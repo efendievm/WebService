@@ -5,7 +5,7 @@ using WebService.Domain;
 namespace WebService.Infrastructure.Repositories;
 
 /// <summary>
-/// Базовый репозиторий.
+/// Р‘Р°Р·РѕРІС‹Р№ СЂРµРїРѕР·РёС‚РѕСЂРёР№.
 /// </summary>
 /// <typeparam name="TModel"></typeparam>
 /// <typeparam name="TContext"></typeparam>
@@ -17,26 +17,26 @@ public abstract class BaseRepository<TModel, TContext> : IRepository<TModel>
     protected DbSet<TModel> Set => Context.Set<TModel>();
 
     /// <summary>
-    /// Конструктор.
+    /// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ.
     /// </summary>
-    /// <param name="context">Контекст БД.</param>
+    /// <param name="context">РљРѕРЅС‚РµРєСЃС‚ Р‘Р”.</param>
     public BaseRepository(TContext context)
     {
         Context = context;
     }
 
     /// <summary>
-    /// Чтение сущностей.
+    /// Р§С‚РµРЅРёРµ СЃСѓС‰РЅРѕСЃС‚РµР№.
     /// </summary>
-    /// <returns>Запрос на чтение сущностей.</returns>
+    /// <returns>Р—Р°РїСЂРѕСЃ РЅР° С‡С‚РµРЅРёРµ СЃСѓС‰РЅРѕСЃС‚РµР№.</returns>
     public IQueryable<TModel> Get() => Set;
 
     /// <summary>
-    /// Добавление сущности.
+    /// Р”РѕР±Р°РІР»РµРЅРёРµ СЃСѓС‰РЅРѕСЃС‚Рё.
     /// </summary>
-    /// <param name="model">Добавляемая сущность.</param>
-    /// <param name="token">Токен отмены.</param>
-    /// <returns>Задача на добавление мущности в БД.</returns>
+    /// <param name="model">Р”РѕР±Р°РІР»СЏРµРјР°СЏ СЃСѓС‰РЅРѕСЃС‚СЊ.</param>
+    /// <param name="token">РўРѕРєРµРЅ РѕС‚РјРµРЅС‹.</param>
+    /// <returns>Р—Р°РґР°С‡Р° РЅР° РґРѕР±Р°РІР»РµРЅРёРµ РјСѓС‰РЅРѕСЃС‚Рё РІ Р‘Р”.</returns>
     public async Task Add(TModel model, CancellationToken token = default)
     {
        await Set.AddAsync(model, token);
