@@ -51,7 +51,7 @@ public class QueryProviderTest
             calculationMeterByPeriod.Period = periods.First(x => x.Id == calculationMeterByPeriod.PeriodId);
         }
 
-        _calculationMeterByPeriodRepository.Setup(repo => repo.Get()).Returns(new TestAsyncEnumerable<CalculationMeterByPeriod>(calculationMeterByPeriods));
+        _calculationMeterByPeriodRepository.Setup(repo => repo.Get()).Returns(calculationMeterByPeriods.AsQueryable());
         _meterRepository.Setup(repo => repo.Get()).Returns(meters.AsQueryable());
 
         _mapper = new Mock<IMapper>();
