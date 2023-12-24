@@ -1,0 +1,24 @@
+{
+  "profiles": {
+    "WebService.RestApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:8050;http://localhost:8051"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "publishAllPorts": true,
+      "useSSL": true,
+      "httpPort": 8051,
+      "sslPort": 8051
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json"
+}

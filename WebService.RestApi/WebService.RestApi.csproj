@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>f6380f3e-3cd5-42f2-aa9e-163b2952f5c7</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="WebService.RestApi.pfx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.10" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.10">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="WebService.RestApi.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebService.Infrastructure\WebService.Infrastructure.csproj" />
+    <ProjectReference Include="..\WebService.Services\WebService.Services.csproj" />
+  </ItemGroup>
+
+</Project>

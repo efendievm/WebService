@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WebService.Migration": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

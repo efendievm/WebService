@@ -1,0 +1,41 @@
+version: '3.6'
+
+services:
+  webapp:
+    container_name: WebService.RestApi
+    build:
+      context: .
+      dockerfile: WebService.RestApi/Dockerfile
+    environment:
+      "AppSettings:DbContextSettings:ConnectionString": "Server=database;Port=5432;Database=WebServiceDb;User Id=root;Password=password"
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8051;https://+:8050
+      ASPNETCORE_HTTPS_PORT: 8050
+      DOTNET_USE_POLLING_FILE_WATCHER: 1
+    ports:
+      - "8050:8050"
+      - "8051:8051"
+    depends_on:      
+      - migration
+      
+      
+  migration:
+    container_name: WebService.Migration
+    build:
+      context: .
+      dockerfile: WebService.Migration/Dockerfile
+    environment:
+      "AppSettings:DbContextSettings:ConnectionString": "Server=database;Port=5432;Database=WebServiceDb;User Id=root;Password=password;Include Error Detail=true;"
+      "AppSettings:LoadMockData": "True"
+    depends_on:
+      - database
+
+
+  database:
+    image: "postgres"
+    environment:
+      POSTGRES_DB: "WebServiceDb"
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "password"
+    ports:
+      - "5432:5432"
